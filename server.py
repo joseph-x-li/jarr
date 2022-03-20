@@ -1,4 +1,3 @@
-from tkinter import LEFT
 import RPi.GPIO as GPIO
 import time
 import zmq
