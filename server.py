@@ -75,10 +75,10 @@ try:
 
       # handle pan by checking "Left" and "Right" keys
       if keyboard_state["Left"]:
-        PAN_LEFT_ANGLE = 45
+        PAN_LEFT_ANGLE = 135
         pan.ChangeDutyCycle(2+(PAN_LEFT_ANGLE/18))
       elif keyboard_state["Right"]:
-        PAN_RIGHT_ANGLE = 135
+        PAN_RIGHT_ANGLE = 45
         pan.ChangeDutyCycle(2+(PAN_RIGHT_ANGLE/18))
       else:
         PAN_CENTER_ANGLE = 90
