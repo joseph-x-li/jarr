@@ -42,10 +42,9 @@ try:
     #Ask user for angle and turn servo to it
     try:
       keyboard_state = socket.recv_pyobj()
-      print("keyboard_state: ", keyboard_state)
+      
       # handle wasd for forward and back
       if keyboard_state["w"]:
-        print("WENABLE")
         GPIO.output(in1, True)
         GPIO.output(in2, False)
         GPIO.output(in3, True)
@@ -63,13 +62,13 @@ try:
 
       # handle wasd for left and right
       if keyboard_state["a"]:
-        STEERING_LEFT_ANGLE = 60
+        STEERING_LEFT_ANGLE = 50
         steering.ChangeDutyCycle(2+(STEERING_LEFT_ANGLE/18))
       elif keyboard_state["d"]:
-        STEERING_RIGHT_ANGLE = 120
+        STEERING_RIGHT_ANGLE = 110
         steering.ChangeDutyCycle(2+(STEERING_RIGHT_ANGLE/18))
       else:
-        STEERING_CENTER_ANGLE = 90
+        STEERING_CENTER_ANGLE = 80
         steering.ChangeDutyCycle(2+(STEERING_CENTER_ANGLE/18))
 
       # handle pan by checking "Left" and "Right" keys
