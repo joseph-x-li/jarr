@@ -86,13 +86,13 @@ try:
 
       # handle tilt by checking "Up" and "Down" keys
       if keyboard_state["Up"]:
-        TILT_UP_ANGLE = 45
+        TILT_UP_ANGLE = 90
         tilt.ChangeDutyCycle(2+(TILT_UP_ANGLE/18))
       elif keyboard_state["Down"]:
-        TILT_DOWN_ANGLE = 135
+        TILT_DOWN_ANGLE = 170
         tilt.ChangeDutyCycle(2+(TILT_DOWN_ANGLE/18))
       else:
-        TILT_CENTER_ANGLE = 90
+        TILT_CENTER_ANGLE = 135
         tilt.ChangeDutyCycle(2+(TILT_CENTER_ANGLE/18))
 
       # toggle turning motors off by checking "space" key
