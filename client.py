@@ -18,6 +18,8 @@ class Example(tk.Frame):
         self.label.bind("<KeyRelease-s>", self.on_wasd_release)
         self.label.bind("<d>", self.on_wasd)
         self.label.bind("<KeyRelease-d>", self.on_wasd_release)
+        self.label.bind("<space>", self.on_wasd)
+        self.label.bind("<KeyRelease-space>", self.on_wasd_release)
         # up arrow
         self.label.bind("<Up>", self.on_wasd)
         self.label.bind("<KeyRelease-Up>", self.on_wasd_release)
@@ -46,7 +48,8 @@ class Example(tk.Frame):
           "Up": False,
           "Down": False,
           "Left": False,
-          "Right": False
+          "Right": False,
+          "space": False
         }
 
         self.context = zmq.Context()

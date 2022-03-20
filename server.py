@@ -42,7 +42,7 @@ try:
     #Ask user for angle and turn servo to it
     try:
       keyboard_state = socket.recv_pyobj()
-      
+
       # handle wasd for forward and back
       if keyboard_state["w"]:
         GPIO.output(in1, True)
@@ -62,13 +62,13 @@ try:
 
       # handle wasd for left and right
       if keyboard_state["a"]:
-        STEERING_LEFT_ANGLE = 50
+        STEERING_LEFT_ANGLE = 55
         steering.ChangeDutyCycle(2+(STEERING_LEFT_ANGLE/18))
       elif keyboard_state["d"]:
         STEERING_RIGHT_ANGLE = 110
         steering.ChangeDutyCycle(2+(STEERING_RIGHT_ANGLE/18))
       else:
-        STEERING_CENTER_ANGLE = 80
+        STEERING_CENTER_ANGLE = 85
         steering.ChangeDutyCycle(2+(STEERING_CENTER_ANGLE/18))
 
       # handle pan by checking "Left" and "Right" keys
@@ -92,6 +92,16 @@ try:
       else:
         TILT_CENTER_ANGLE = 90
         tilt.ChangeDutyCycle(2+(TILT_CENTER_ANGLE/18))
+
+      # handle turning motors off by checking "space" key
+      if keyboard_state["space"]:
+        GPIO.output(in1, False)
+        GPIO.output(in2, False)
+        GPIO.output(in3, False)
+        GPIO.output(in4, False)
+        steering.ChangeDutyCycle(0)
+        pan.ChangeDutyCycle(0)
+        tilt.ChangeDutyCycle(0)
 
     except zmq.ZMQError:
       print("WTF???")
