@@ -5,9 +5,6 @@ in3:Pin 35 (GPIO 19)
 in4:Pin 37 (GPIO 26)
 
 # Servos:
-Pin 36 (GPIO 16)
-Pin 38 (GPIO 20)
-Pin 40 (GPIO 21)
-Steering:         
-Pan (left/right): 
-Tilt (up/down):   
+Pan (left/right): Pin 32 (GPIO 12)
+Tilt (up/down):   Pin 36 (GPIO 16)
+Steering:         Pin 40 (GPIO 21)
