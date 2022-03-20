@@ -67,7 +67,7 @@ try:
         STEERING_LEFT_ANGLE = 55
         steering.ChangeDutyCycle(2+(STEERING_LEFT_ANGLE/18))
       elif keyboard_state["d"]:
-        STEERING_RIGHT_ANGLE = 110
+        STEERING_RIGHT_ANGLE = 105
         steering.ChangeDutyCycle(2+(STEERING_RIGHT_ANGLE/18))
       else:
         STEERING_CENTER_ANGLE = 85
