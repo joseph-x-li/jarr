@@ -64,7 +64,7 @@ try:
 
       # handle wasd for left and right
       if keyboard_state["a"]:
-        STEERING_LEFT_ANGLE = 55
+        STEERING_LEFT_ANGLE = 65
         steering.ChangeDutyCycle(2+(STEERING_LEFT_ANGLE/18))
       elif keyboard_state["d"]:
         STEERING_RIGHT_ANGLE = 105
@@ -89,7 +89,7 @@ try:
         TILT_UP_ANGLE = 90
         tilt.ChangeDutyCycle(2+(TILT_UP_ANGLE/18))
       elif keyboard_state["Down"]:
-        TILT_DOWN_ANGLE = 160
+        TILT_DOWN_ANGLE = 150
         tilt.ChangeDutyCycle(2+(TILT_DOWN_ANGLE/18))
       else:
         TILT_CENTER_ANGLE = 135
