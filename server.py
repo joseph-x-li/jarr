@@ -45,6 +45,7 @@ try:
       print("keyboard_state: ", keyboard_state)
       # handle wasd for forward and back
       if keyboard_state["w"]:
+        print("WENABLE")
         GPIO.output(in1, True)
         GPIO.output(in2, False)
         GPIO.output(in3, True)
