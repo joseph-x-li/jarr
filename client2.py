@@ -1,4 +1,13 @@
 from pystreaming import Receiver, buffer, display
-with Receiver("tcp://localhost:5555") as stream:
-    for _, data in buffer(0.5, {'video': stream.handler}):
-        display(data['arr'])
+import numpy as np
+
+def main():
+  with Receiver("tcp://192.168.4.3:5556") as stream:
+    def videohandler():
+      return stream.handler(timeout=60_000)
+
+    for _, data in buffer(0.5, {'video': videohandler}):
+        display(np.flipud(data['arr']), BGR=False)
+
+if __name__ == "__main__":
+  main()
