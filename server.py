@@ -37,6 +37,8 @@ context = zmq.Context()
 socket = context.socket(zmq.PULL)
 socket.bind("tcp://*:5555")
 
+everything_off = False
+
 try:
   while True:
     #Ask user for angle and turn servo to it
@@ -93,8 +95,11 @@ try:
         TILT_CENTER_ANGLE = 90
         tilt.ChangeDutyCycle(2+(TILT_CENTER_ANGLE/18))
 
-      # handle turning motors off by checking "space" key
+      # toggle turning motors off by checking "space" key
       if keyboard_state["space"]:
+        everything_off = not everything_off
+
+      if everything_off:
         GPIO.output(in1, False)
         GPIO.output(in2, False)
         GPIO.output(in3, False)
