@@ -42,6 +42,7 @@ try:
     #Ask user for angle and turn servo to it
     try:
       keyboard_state = socket.recv_pyobj()
+      print("keyboard_state: ", keyboard_state)
       # handle wasd for forward and back
       if keyboard_state["w"]:
         GPIO.output(in1, True)
