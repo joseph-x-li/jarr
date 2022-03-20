@@ -89,7 +89,7 @@ try:
         TILT_UP_ANGLE = 90
         tilt.ChangeDutyCycle(2+(TILT_UP_ANGLE/18))
       elif keyboard_state["Down"]:
-        TILT_DOWN_ANGLE = 170
+        TILT_DOWN_ANGLE = 160
         tilt.ChangeDutyCycle(2+(TILT_DOWN_ANGLE/18))
       else:
         TILT_CENTER_ANGLE = 135
