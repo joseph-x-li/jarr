@@ -1,6 +1,5 @@
 import tkinter as tk
 import zmq
-import pystreaming as ps
 
 # send self.hold to server using push/pull zmq sockets
 
@@ -53,8 +52,6 @@ class Example(tk.Frame):
           "space": False
         }
 
-
-        self.receiver = ps.Receiver("tcp://192.168.4.3:5556")
 
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.PUSH)

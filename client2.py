@@ -7,7 +7,7 @@ def main():
       return stream.handler(timeout=60_000)
 
     for _, data in buffer(0.5, {'video': videohandler}):
-        display(np.flipud(data['arr']), BGR=False)
+        display(np.fliplr(np.flipud(data['arr'])), BGR=False)
 
 if __name__ == "__main__":
   main()
